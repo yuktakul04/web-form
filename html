@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+<style>
+h1 {text-align: center;}
+</style>
+<script type="text/javascript">
+// function is Created
+function CurrentFunction(){
+var checked = document.getElementById("same").checked;
+document.getElementById("CurrentName").value = checked?
+document.getElementById("RegisteredName").value : "";
+document.getElementById("CurrentZip").value = checked?
+document.getElementById("RegisteredZip").value : "";
+document.getElementById("CurrentAddress").value = checked?
+document.getElementById("RegisteredAddress").value : "";
+}
+</script>
+</head>
+<body>
+
+<form action="/action_page.php">
+
+  <div class="container">
+<p style="text-align:center;"><img src="report.png" width="200" height="250" class="aligncenter"></p>
+<h1 >ANNUAL ACADEMIC REPORT</h1>
+    <p>Please fill the correct details for us to mail your wards annual academic report.Do mention your current address if you dont reside in the address registered in the university database.</p>
+    <hr>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+    <label for ="RegisteredName">Enter your Name:</label>
+<input type = "text" name = "Name" id = "RegisteredName" required><br><br>
+<label for ="RegisteredAddress">Enter your Address:</label>
+<input type = "text" name = "Adress" id = "RegisteredAddress" required><br><br>
+<label for = "Registeredzip">Enter your Zip code:</label>
+<input type = "text" name = "zip" id = "RegisteredZip" pattern = "[0-9]{6}" required><br><br>
+<label for="male">Male</label>
+<input type="radio" id="male" name="gender" value="male">
+<label for="female">Female</label>
+<input type="radio" id="female" name="gender" value="female"><br><br>
+<label for="birthday">Enter your DOB:</label>
+<input type="date" id="birthday" name="birthday"><br><br>
+<label for="phone">Enter your phone number:</label>
+<input type="tel" id="phone" name="phone" pattern="[0-9]{10}"><br><br>
+<label for="India"> I am from India</label>
+<input type="checkbox" id="Country" name="Country" value="India">
+<label for="Other"> Other Country</label>
+<input type="checkbox" id="Othercountry" name="Othercountry" value="Other "><br><br>
+</fieldset>
+<input type="checkbox" id="same" name="same" onchange= "CurrentFunction()">
+<label for = "same">Are the registered address and current address same?</label>
+<fieldset>
+<legend>Current Information</legend>
+<label for ="CurrentName">Enter your Name:</label>
+<input type = "text" name = "Name" id = "CurrentName" required><br><br>
+<label for = "Currentzip">Enter your Zip code:</label>
+<input type = "text" name = "zip" id = "CurrentZip" pattern = "[0-9]{6}" required><br><br>
+<label for ="CurrentAddress">Enter your Address:</label>
+<input type = "text" name = "Adress" id = "CurrentAddress" required><br><br>
+</fieldset>
+
+    <button type="submit" class="registerbtn">Submit</button>
+  </div>
+  
+ 
+</form>
+
+</body>
+</html>
